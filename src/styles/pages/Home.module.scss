@@ -1,0 +1,52 @@
+.home {
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: darkslategrey;
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    height: 120px;
+    margin-bottom: 30px;
+  }
+
+  &_buttons {
+    width: 50%;
+
+    display: flex;
+    justify-content: space-around;
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      width: 200px;
+      border-radius: 20px;
+      background-color: orangered;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .search {
+      color: white;
+    }
+
+    .about {
+      border: 3px solid orangered;
+      background-color: white;
+      color: red;
+    }
+  }
+}
