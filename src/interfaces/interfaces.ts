@@ -4,6 +4,10 @@ export interface EmissionData {
   start: string;
 }
 
+export interface CountryCodes {
+  [index: string]: string;
+}
+
 export interface ChartsData {
   value: EmissionData[];
 }

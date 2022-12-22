@@ -1,6 +1,6 @@
 import { atom, SetStateAction, useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
-import { timeRangeOptions } from '../utils/miscellaneous';
+import { timeRangeOptions } from '../lib/utils/miscellaneous';
 import { TimeRangeOptions } from '../interfaces/interfaces';
 
 interface Atoms {

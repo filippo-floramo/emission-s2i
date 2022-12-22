@@ -1,4 +1,4 @@
-import { TimeRangeOptions } from '../interfaces/interfaces';
+import { TimeRangeOptions } from '../../interfaces/interfaces';
 
 export const coordinatesRegExp = /[a-z]+/gi;
 

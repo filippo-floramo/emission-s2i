@@ -1,5 +1,5 @@
-import { EmissionData } from '../interfaces/interfaces';
-import { TimeRangeOptions } from '../interfaces/interfaces';
+import { EmissionData } from '../../interfaces/interfaces';
+import { TimeRangeOptions } from '../../interfaces/interfaces';
 
 // here goes the time range
 
