@@ -1,0 +1,40 @@
+.search {
+   height: 100vh;
+   width: 100%;
+   overflow-x: hidden;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   background-color: darkturquoise;
+
+   &_cta {
+      margin-bottom: 40px;
+   }
+
+   &_buttons {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 50%;
+
+      p {
+         font-size: 1.6rem;
+         font-weight: 700;
+         margin-inline: 30px;
+      }
+
+      .search_btn {
+         width: 200px;
+         height: 60px;
+         border: none;
+         border-radius: 8px;
+         background-color: red;
+         color: white;
+         font-family: "source-sans-pro";
+         font-size: 1.2rem;
+         cursor: pointer;
+      }
+   }
+}
