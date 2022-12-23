@@ -4,6 +4,7 @@ import { CountryCodes } from '../../../interfaces/interfaces';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import styles from './ModalSelect.module.scss';
+import useEmissionAtoms from '../../../atoms/emissionAtoms';
 
 
 
@@ -15,6 +16,8 @@ interface DataTypes {
 type SelectTypes = DataTypes | undefined;
 
 export default function ModalSelect(): JSX.Element {
+
+   const { emissionQueries, setEmissionQueries } = useEmissionAtoms();
 
    const { data, error } = useQuery({
       queryKey: ['countryCodes'],
@@ -49,7 +52,13 @@ export default function ModalSelect(): JSX.Element {
             className={styles.country_select}
             placeholder="Select a country...lollino"
             onChange={(country) => {
-               console.log(country);
+               setEmissionQueries((prev) => {
+                  return {
+                     ...prev,
+                     countryCode: country?.value
+                  };
+                  console.log(emissionQueries);
+               });
             }}
             isSearchable={true}
             options={countryOptions}

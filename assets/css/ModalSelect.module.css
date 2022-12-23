@@ -1,0 +1,10 @@
+.select .country_select {
+  width: 200px;
+  z-index: 30;
+}
+.select .country_select .select__control {
+  height: 50px;
+}
+.select p {
+  text-align: center;
+}/*# sourceMappingURL=ModalSelect.module.css.map */
