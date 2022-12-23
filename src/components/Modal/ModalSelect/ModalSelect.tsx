@@ -15,6 +15,7 @@ interface DataTypes {
 type SelectTypes = DataTypes | undefined;
 
 export default function ModalSelect(): JSX.Element {
+
    const { data, error } = useQuery({
       queryKey: ['countryCodes'],
       queryFn: getCountryCodes,
@@ -46,7 +47,7 @@ export default function ModalSelect(): JSX.Element {
          <Select
             name="country"
             className={styles.country_select}
-            placeholder="Select a country..."
+            placeholder="Select a country...lollino"
             onChange={(country) => {
                console.log(country);
             }}
