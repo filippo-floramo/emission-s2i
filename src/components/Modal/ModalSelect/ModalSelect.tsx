@@ -43,6 +43,7 @@ export default function ModalSelect(): JSX.Element {
 
    if (error) return <div>Data not found</div>;
 
+
    return (
       <div className={styles.select}>
          <p>Country</p>
@@ -57,7 +58,6 @@ export default function ModalSelect(): JSX.Element {
                      ...prev,
                      countryCode: country?.value
                   };
-                  console.log(emissionQueries);
                });
             }}
             isSearchable={true}
