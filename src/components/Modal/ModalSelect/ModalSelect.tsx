@@ -51,7 +51,7 @@ export default function ModalSelect(): JSX.Element {
          <Select
             name="country"
             className={styles.country_select}
-            placeholder="Select a country...lollino"
+            placeholder="Select a country..."
             onChange={(country) => {
                setEmissionQueries((prev) => {
                   return {
