@@ -1,5 +1,5 @@
 import Select from 'react-select';
-import { getCountryCodes } from "../../../lib/api/api";
+import { getCountryCodes } from "../../../lib/fetch/api";
 import { CountryCodes } from '../../../interfaces/interfaces';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
@@ -17,7 +17,7 @@ type SelectTypes = DataTypes | undefined;
 
 export default function ModalSelect(): JSX.Element {
 
-   const { emissionQueries, setEmissionQueries } = useEmissionAtoms();
+   const { setEmissionQueries } = useEmissionAtoms();
 
    const { data, error } = useQuery({
       queryKey: ['countryCodes'],

@@ -6,6 +6,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import type { } from '@mui/x-date-pickers/themeAugmentation';
 import useEmissionAtoms from '../../../atoms/emissionAtoms';
 import TextField from '@mui/material/TextField';
+import styles from "./ModalDatePickers.module.scss";
 
 
 type DateTypes = Dayjs | null
@@ -18,7 +19,7 @@ export default function ModalDatePickers(): JSX.Element {
    const { startDate, endDate } = emissionQueries;
 
    return (
-      <div className="date--range">
+      <div className={styles.date_range}>
          <p>Pick the date Range</p>
 
          <LocalizationProvider dateAdapter={AdapterDayjs}>
