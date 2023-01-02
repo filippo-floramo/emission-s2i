@@ -27,7 +27,7 @@ export const getDates = (rangeOption: TimeRangeOptions | null): DateRange | unde
   }
 };
 
-export const manageData = (data: EmissionData[]) => {
+export const manageData = (data: EmissionData[]): EmissionData[] => {
   const sortedData = data.slice().sort((a, b): number => {
     const first = a.start.match(/[0-9]+/g)?.join('');
     const second = b.start.match(/[0-9]+/g)?.join('');
@@ -50,9 +50,30 @@ export const manageData = (data: EmissionData[]) => {
   return formattedData;
 };
 
+export const getRangeData = (data: EmissionData[] | null, range: TimeRangeOptions | null): EmissionData[] | undefined | null => {
+
+  if (range?.type !== 'max') {
+    const filteredData = data?.filter((data: EmissionData) => {
+      const rangeSelected = getDates(range);
+
+      if (!rangeSelected) return true;
+
+      const date = new Date(data.start).getTime();
+
+      return date >= rangeSelected.from && date <= rangeSelected.to;
+    });
+
+    return filteredData;
+  } else {
+
+    return data;
+  }
+};
+
 const formatDate = (date: string): string => {
   const fullDate = new Date(date);
   const dateFormatted = `${fullDate.getMonth() + 1}/${fullDate.getDate()}/${fullDate.getFullYear()} `;
 
   return dateFormatted;
 };
+

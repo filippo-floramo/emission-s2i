@@ -8,8 +8,8 @@ export default function Home(): JSX.Element {
         <div className={styles.home_text}>
           <h1>This is the app</h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, provident adipisci veritatis
-            omnis doloribus a! Ex reprehenderit quasi optio. Ullam?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, provident adipisci veritatis omnis
+            doloribus a! Ex reprehenderit quasi optio. Ullam?
           </p>
         </div>
         <div className={styles.home_buttons}>
