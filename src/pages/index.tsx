@@ -6,18 +6,11 @@ export default function Home(): JSX.Element {
     <>
       <div className={styles.home}>
         <div className={styles.home_text}>
-          <h1>This is the app</h1>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, provident adipisci veritatis omnis
-            doloribus a! Ex reprehenderit quasi optio. Ullam?
-          </p>
+          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, iusto!</h1>
         </div>
         <div className={styles.home_buttons}>
-          <Link href="/search" className={`${styles.btn} ${styles.search}`}>
-            Search
-          </Link>
           <Link href="/about" className={`${styles.btn} ${styles.about}`}>
-            About
+            What does it mean?
           </Link>
         </div>
       </div>

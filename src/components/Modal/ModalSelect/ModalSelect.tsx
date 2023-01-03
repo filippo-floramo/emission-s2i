@@ -21,6 +21,7 @@ export default function ModalSelect(): JSX.Element {
     queryFn: getCountryCodes,
   });
 
+
   const countryOptions: SelectTypes[] = useMemo(() => {
     const filteredCountryCodes: string[] = Object.keys(data || []).filter((key) => {
       return key.length <= 2;

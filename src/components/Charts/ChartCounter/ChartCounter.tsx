@@ -16,7 +16,7 @@ export default function ChartCounter({ data }: ChartCounterProps): JSX.Element {
    const floated = mean * 100;
    return (
       <>
-         <div>{`Total average: ${floated.toFixed(2)} ⋅ 10⁻²    mol/m²`}</div>
+         <div>{`Total average: ${floated.toFixed(2)} ⋅ 10⁻² mol/m²`}</div>
       </>
    );
 }
