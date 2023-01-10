@@ -1,4 +1,4 @@
-import { EmissionData } from '../../interfaces/interfaces';
+import { EmissionData, EmissionQuery } from '../../interfaces/interfaces';
 import { TimeRangeOptions } from '../../interfaces/interfaces';
 
 // here goes the time range
@@ -50,11 +50,14 @@ export const manageData = (data: EmissionData[]): EmissionData[] => {
   return formattedData;
 };
 
-export const getRangeData = (data: EmissionData[] | null, range: TimeRangeOptions | null): EmissionData[] | undefined | null => {
+export const getRangeData = (data: EmissionData[] | null, range: TimeRangeOptions | null): EmissionData[] => {
+
+  if (!data) return [];
+
+  const rangeSelected = getDates(range);
 
   if (range?.type !== 'max') {
     const filteredData = data?.filter((data: EmissionData) => {
-      const rangeSelected = getDates(range);
 
       if (!rangeSelected) return true;
 
@@ -68,6 +71,25 @@ export const getRangeData = (data: EmissionData[] | null, range: TimeRangeOption
 
     return data;
   }
+};
+
+
+export const getMainSearchData = (mainEmissionData: EmissionData[] | null, emissionQueries: EmissionQuery): EmissionData[] => {
+
+  const { startDate, endDate } = emissionQueries;
+
+  if (!startDate || !endDate || !mainEmissionData) return [];
+
+  const startDateMs = new Date(startDate).getTime();
+  const endDateMs = new Date(endDate).getTime();
+
+  const filteredSearchdata = mainEmissionData.filter((data: EmissionData) => {
+    const date = new Date(data.start).getTime();
+
+    return date >= startDateMs && date <= endDateMs;
+  });
+
+  return filteredSearchdata;
 };
 
 const formatDate = (date: string): string => {

@@ -4,6 +4,14 @@ export interface EmissionData {
   start: string;
 }
 
+export interface EmissionQuery {
+  countryCode: string | undefined;
+  latitude: string | undefined;
+  longitude: string | undefined;
+  startDate: string | undefined;
+  endDate: string | undefined;
+}
+
 export interface CountryCodes {
   [index: string]: string;
 }

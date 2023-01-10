@@ -1,12 +1,16 @@
-import * as React from 'react';
+import { useMemo } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import useEmissionAtoms from '../../atoms/emissionAtoms';
+import { getMainSearchData } from '../../lib/utils/functions';
 import ChartContainer from './ChartContainer/ChartContainer';
 
 export default function MainChart(): JSX.Element {
-  const { mainEmissionData } = useEmissionAtoms();
+  const { mainEmissionData, emissionQueries } = useEmissionAtoms();
 
-  if (!mainEmissionData || mainEmissionData.length === 0) return <>Data Not found</>;
+
+  const searchData = useMemo(() => getMainSearchData(mainEmissionData, emissionQueries), [emissionQueries, mainEmissionData]);
+
+  if (!searchData || searchData.length === 0) return <>Data Not found</>;
 
   return (
     <ChartContainer>
@@ -14,7 +18,7 @@ export default function MainChart(): JSX.Element {
         <LineChart
           width={600}
           height={300}
-          data={mainEmissionData || []}
+          data={searchData || []}
           margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
           <Line
             type="step"

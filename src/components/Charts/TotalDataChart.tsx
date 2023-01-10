@@ -7,7 +7,6 @@ import ChartCounter from "./ChartCounter/ChartCounter";
 import useStateAtoms from "../../atoms/atoms";
 import Select from "react-select";
 import useEmissionAtoms from '../../atoms/emissionAtoms';
-import { EmissionData } from '../../interfaces/interfaces';
 
 
 export default function TotalDataChart(): JSX.Element {
