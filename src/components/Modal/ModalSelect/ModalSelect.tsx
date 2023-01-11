@@ -1,17 +1,14 @@
 import Select from 'react-select';
 import { getCountryCodes } from '../../../lib/fetch/api';
-import { CountryCodes } from '../../../interfaces/interfaces';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import styles from './ModalSelect.module.scss';
 import useEmissionAtoms from '../../../atoms/emissionAtoms';
 
 interface DataTypes {
-  label: CountryCodes;
+  label: string;
   value: string;
 }
-
-type SelectTypes = DataTypes | undefined;
 
 export default function ModalSelect(): JSX.Element {
   const { setEmissionQueries } = useEmissionAtoms();
@@ -21,18 +18,16 @@ export default function ModalSelect(): JSX.Element {
     queryFn: getCountryCodes,
   });
 
+  const countryOptions: DataTypes[] = useMemo(() => {
 
-  const countryOptions: SelectTypes[] = useMemo(() => {
+    if (!data) return [];
+
     const filteredCountryCodes: string[] = Object.keys(data || []).filter((key) => {
       return key.length <= 2;
     });
 
-    const options: SelectTypes[] = filteredCountryCodes.map((key) => {
-      if (data) {
-        return { label: data[key as unknown as number], value: key };
-      } else {
-        return undefined;
-      }
+    const options: DataTypes[] = filteredCountryCodes.map((key) => {
+      return { label: data[key], value: key };
     });
     console.log('rerendered');
 
