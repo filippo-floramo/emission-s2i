@@ -1,9 +1,11 @@
 import useStateAtoms from '../atoms/atoms';
 import styles from '../styles/pages/Search.module.scss';
 import ModalIndex from '../components/Modal/ModalIndex/ModalIndex';
+import useEmissionAtoms from '../atoms/emissionAtoms';
 
 export default function Search(): JSX.Element {
   const { setIsCountrySearch, setIsModalOpen, isModalOpen } = useStateAtoms();
+  const { setEmissionQueries } = useEmissionAtoms();
 
   return (
     <>
@@ -16,6 +18,13 @@ export default function Search(): JSX.Element {
             onClick={() => {
               setIsCountrySearch(true);
               setIsModalOpen(true);
+              setEmissionQueries({
+                countryCode: undefined,
+                latitude: undefined,
+                longitude: undefined,
+                startDate: undefined,
+                endDate: undefined,
+              });
             }}>
             Country
           </button>
@@ -25,6 +34,13 @@ export default function Search(): JSX.Element {
             onClick={() => {
               setIsCountrySearch(false);
               setIsModalOpen(true);
+              setEmissionQueries({
+                countryCode: undefined,
+                latitude: undefined,
+                longitude: undefined,
+                startDate: undefined,
+                endDate: undefined,
+              });
             }}>
             Coordinates
           </button>

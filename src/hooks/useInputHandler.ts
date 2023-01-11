@@ -14,22 +14,33 @@ export function useInputHandler() {
   const { emissionQueries } = useEmissionAtoms();
   const { countryCode, longitude, latitude, startDate, endDate } = emissionQueries;
 
-  const dateRange = startDate && endDate;
-  const areAllFalsy = Object.values(emissionQueries).every((value) => !value);
+
 
   const handleInputs = () => {
+
+    const hasDates = startDate && endDate ? true : false;
+
+    const startDateMs: number = new Date(startDate ? startDate : "").getTime();
+    const endDateMs: number = new Date(endDate ? endDate : "").getTime();
+
+    const dateRange = endDateMs - startDateMs;
+
+    const areAllFalsy = Object.values(emissionQueries).every((value) => !value);
+
     if (areAllFalsy) {
       alert('Please fill the required fields');
-    } else if (!dateRange) {
+    } else if (!hasDates) {
       alert('Please choose the date range');
-    } else if (dateRange && !(countryCode || (longitude && latitude))) {
+    } else if (dateRange < 0) {
+      alert("Date range is invalid");
+    } else if (hasDates && !(countryCode || (longitude && latitude))) {
       alert('Please select and indication for the place');
-    } else if (dateRange && countryCode) {
+    } else if (hasDates && countryCode) {
       getEmissionData().then(() => {
         setIsModalOpen(false);
         router.push('/results');
       });
-    } else if (dateRange && longitude && latitude) {
+    } else if (hasDates && longitude && latitude) {
       const latitudeIsNotValid = coordinatesRegExp.test(latitude);
       const longitudeIsNotValid = coordinatesRegExp.test(longitude);
 
