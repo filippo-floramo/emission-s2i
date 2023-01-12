@@ -25,22 +25,22 @@ export function useInputHandler() {
 
     const dateRange = endDateMs - startDateMs;
 
-    const areAllFalsy = Object.values(emissionQueries).every((value) => !value);
+    const isFieldEmpty = Object.values(emissionQueries).every((value) => !value);
 
-    if (areAllFalsy) {
+    if (isFieldEmpty) {
       alert('Please fill the required fields');
     } else if (!hasDates) {
       alert('Please choose the date range');
     } else if (dateRange < 0) {
       alert("Date range is invalid");
-    } else if (hasDates && !(countryCode || (longitude && latitude))) {
+    } else if (!(countryCode || (longitude && latitude))) {
       alert('Please select and indication for the place');
-    } else if (hasDates && countryCode) {
+    } else if (countryCode) {
       getEmissionData().then(() => {
         setIsModalOpen(false);
         router.push('/results');
       });
-    } else if (hasDates && longitude && latitude) {
+    } else if (longitude && latitude) {
       const latitudeIsNotValid = coordinatesRegExp.test(latitude);
       const longitudeIsNotValid = coordinatesRegExp.test(longitude);
 
