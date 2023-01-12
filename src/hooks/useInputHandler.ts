@@ -12,7 +12,13 @@ export function useInputHandler() {
   const { setIsModalOpen } = useStateAtoms();
 
   const { emissionQueries } = useEmissionAtoms();
-  const { countryCode, longitude, latitude, startDate, endDate } = emissionQueries;
+  const {
+    countryCode,
+    longitude,
+    latitude,
+    startDate,
+    endDate
+  } = emissionQueries;
 
 
 

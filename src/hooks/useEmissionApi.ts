@@ -2,8 +2,8 @@ import { manageData, getMainSearchData } from '../lib/utils/functions';
 import { EmissionData } from '../interfaces/interfaces';
 import { atom, useAtom } from 'jotai';
 import useStateAtoms from '../atoms/atoms';
-import axios from 'axios';
 import useEmissionAtoms from '../atoms/emissionAtoms';
+import axios from 'axios';
 
 interface ApiTypes {
   getEmissionData: () => Promise<void>;
