@@ -50,7 +50,10 @@ export const manageData = (data: EmissionData[]): EmissionData[] => {
   return formattedData;
 };
 
-export const getRangeData = (data: EmissionData[] | null, range: TimeRangeOptions | null): EmissionData[] => {
+export const getRangeData = (
+  data: EmissionData[] | null,
+  range: TimeRangeOptions | null
+): EmissionData[] => {
 
   if (!data) return [];
 
@@ -74,7 +77,10 @@ export const getRangeData = (data: EmissionData[] | null, range: TimeRangeOption
 };
 
 
-export const getMainSearchData = (mainEmissionData: EmissionData[] | null, emissionQueries: EmissionQuery): EmissionData[] => {
+export const formatMainSearchData = (
+  mainEmissionData: EmissionData[] | null,
+  emissionQueries: EmissionQuery
+): EmissionData[] => {
 
   const { startDate, endDate } = emissionQueries;
 

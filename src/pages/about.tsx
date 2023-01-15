@@ -1,6 +1,6 @@
 import styles from '../styles/pages/About.module.scss';
 
-function About() {
+export default function About(): JSX.Element {
   return (
     <div className={styles.about}>
       <h1>A llittle about:</h1>
@@ -17,4 +17,3 @@ function About() {
   );
 }
 
-export default About;

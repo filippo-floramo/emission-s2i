@@ -1,4 +1,4 @@
-import { manageData, getMainSearchData } from '../lib/utils/functions';
+import { manageData, formatMainSearchData } from '../lib/utils/functions';
 import { EmissionData } from '../interfaces/interfaces';
 import { atom, useAtom } from 'jotai';
 import useStateAtoms from '../atoms/atoms';
@@ -43,7 +43,7 @@ export function useEmissionApi(): ApiTypes {
 
       console.log(sortedTotalData);
 
-      setMainEmissionData(getMainSearchData(sortedTotalData, emissionQueries));
+      setMainEmissionData(formatMainSearchData(sortedTotalData, emissionQueries));
       setTotalEmissionData(sortedTotalData);
     } catch (error) {
       console.error(error);
