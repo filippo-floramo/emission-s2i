@@ -1,9 +1,19 @@
+import {
+  useScroll,
+  motion,
+  useTransform,
+} from "framer-motion";
 import styles from '../styles/pages/About.module.scss';
 
 export default function About(): JSX.Element {
+
+  const { scrollY } = useScroll();
+  const y2 = useTransform(scrollY, (value) => { return value * (-0.5); });
+
+
   return (
-    <div className={styles.about}>
-      <div className={styles.about_content}>
+    <div className={styles.about} >
+      <motion.div className={styles.about_content} style={{ y: y2 }}>
         <h1>A little about.</h1>
         <div className={styles.text_content}>
           <h2>What is CO?</h2>
@@ -38,8 +48,8 @@ export default function About(): JSX.Element {
             <li>Open flues when fireplaces are in use.</li>
           </ul>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </div >
   );
 }
 
