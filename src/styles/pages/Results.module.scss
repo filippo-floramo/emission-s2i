@@ -1,6 +1,10 @@
+@import "../variables.scss";
+
+
 .results::before {
    content: "";
-   height: 45px;
+   display: block;
+   height: $nav-height;
 }
 
 .results {

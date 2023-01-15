@@ -1,4 +1,13 @@
+@import "../variables.scss";
+
+.home::before {
+  content: "";
+  display: block;
+  height: $nav-height;
+}
+
 .home {
+  position: relative;
   height: 100vh;
   width: 100%;
   padding-inline: 40px;
@@ -40,19 +49,12 @@
       border: none;
       font-size: 1.2rem;
       font-weight: 600;
-
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .search {
-      color: white;
-    }
-
-    .about {
       border: 3px solid orangered;
       background-color: white;
       color: red;
+
+      text-decoration: none;
+      cursor: pointer;
     }
   }
 }
