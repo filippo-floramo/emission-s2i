@@ -1,6 +1,6 @@
 import useStateAtoms from '../atoms/atoms';
 import styles from '../styles/pages/Search.module.scss';
-import ModalIndex from '../components/Modal/ModalIndex/ModalIndex';
+import ModalIndex from '../components/Modal/ModalIndex';
 import useEmissionAtoms from '../atoms/emissionAtoms';
 
 export default function Search(): JSX.Element {
