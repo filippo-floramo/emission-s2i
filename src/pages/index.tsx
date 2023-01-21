@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link';
 import TextFader from '../components/TextFader/TextFader';
-import { getCountryList } from '../lib/fetch/api';
+import { getCountries } from '../lib/fetch/api';
 import styles from '../styles/pages/Home.module.scss';
 
 interface HomeProps {
@@ -10,6 +10,7 @@ interface HomeProps {
 
 
 export default function Home({ countries }: HomeProps): JSX.Element {
+
 
   return (
     <div className={styles.home}>
@@ -29,7 +30,9 @@ export default function Home({ countries }: HomeProps): JSX.Element {
 
 export async function getStaticProps() {
 
-  const countries = await getCountryList();
+  const countryList = await getCountries();
+
+  const countries = countryList.map((country) => country.label);
 
   return {
     props: {
