@@ -5,15 +5,37 @@ import {
 } from "framer-motion";
 import styles from '../styles/pages/About.module.scss';
 
+const AboutVariants = {
+  hidden: { opacity: 0, y: 80 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      opacity: { duration: 0.2 },
+      y: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      },
+    }
+  }
+};
+
 export default function About(): JSX.Element {
 
   const { scrollY } = useScroll();
   const y2 = useTransform(scrollY, (value) => { return value * (-0.5); });
 
-
   return (
-    <div className={styles.about} >
-      <motion.div className={styles.about_content} style={{ y: y2 }}>
+    <div className={styles.about}>
+      <motion.div
+        className={styles.about_content}
+        style={{ y: y2 }}
+        variants={AboutVariants}
+        initial="hidden"
+        animate="animate"
+      >
         <h1>A little about.</h1>
         <div className={styles.text_content}>
           <h2>What is CO?</h2>

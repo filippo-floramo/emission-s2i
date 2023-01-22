@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Navbar from './Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
+import styles from "./Layout.module.scss";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,7 +15,7 @@ function Layout({ children }: LayoutProps): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div>{children}</div>
+      <div className={styles.layout}>{children}</div>
     </>
   );
 }
