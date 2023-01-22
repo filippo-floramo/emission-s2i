@@ -1,0 +1,101 @@
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1628.06 996.69">
+   <g class="circle-1">
+      <circle class="cls-1" cx="1417.83" cy="186.5" r="112.36"/>
+      <circle class="cls-2" cx="1521.87" cy="276.6" r="112.36"/>
+   </g>
+   <g class="circle-2">
+      <circle class="cls-1" cx="216.34" cy="854.68" r="90"/>
+      <circle class="cls-2" cx="353.8" cy="887.61" r="90"/>
+   </g>
+   <g class="circle-3">
+      <circle class="cls-1" cx="74.01" cy="125.29" r="74"/>
+      <circle class="cls-2" cx="120.06" cy="209.43" r="74"/>
+   </g>
+   <g class="circle-4">
+      <circle class="cls-1" cx="1124.41" cy="591.81" r="109.05"/>
+      <circle class="cls-2" cx="1235.3" cy="591.81" r="109.05"/>
+   </g>
+   <!-- <g class="circle-5">
+      <circle class="cls-1" cx="983.15" cy="180.3" r="106.18"/>
+      <circle class="cls-2" cx="854.32" cy="112.39" r="106.18"/>
+   </g> -->
+<defs>
+<style>
+.cls-1{fill:#db2c3d;}.cls-2{fill:#585a5f;}
+
+         @keyframes float1 {
+            0% {
+               transform: translate(0,0);
+            }
+
+            50% {
+               transform:  translate(25px, 10px)
+
+            }
+
+            100% {
+               transform: translate(0,0)
+
+            }
+         }
+
+         .circle-1 {
+
+            animation: float1 5s ease infinite;
+         }
+
+         @keyframes float2 {
+            0% {
+               transform: translate(0, 0)
+            }
+
+            50% {
+               transform: translate(-15px, -15px)
+            }
+
+            100% {
+               transform: translate(0, 0)
+            }
+         }
+
+         .circle-2 {
+            animation: float2 4s infinite;
+         }
+
+         @keyframes float3 {
+            0% {
+               transform: translate(0, 0px)
+            }
+
+            50% {
+               transform: translate(0, -40px)
+            }
+
+            100% {
+               transform: translate(0, 0px)
+            }
+         }
+
+         .circle-3 {
+            animation: float3 6s infinite;
+         }
+         @keyframes float4 {
+            0% {
+               transform: translate(100px, 60px)
+            }
+
+            50% {
+               transform: translate(80px, 30px)
+            }
+
+            100% {
+               transform: translate(100px, 60px)
+            }
+         }
+
+         .circle-4 {
+            animation: float4 6s infinite;
+         }
+</style>
+</defs>
+</svg>

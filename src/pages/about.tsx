@@ -3,6 +3,7 @@ import {
   motion,
   useTransform,
 } from "framer-motion";
+import { UseIsDesktop } from "../lib/utils/mediaQueries";
 import styles from '../styles/pages/About.module.scss';
 
 const AboutVariants = {
@@ -24,8 +25,10 @@ const AboutVariants = {
 
 export default function About(): JSX.Element {
 
+  const isDesktop = UseIsDesktop();
+
   const { scrollY } = useScroll();
-  const y2 = useTransform(scrollY, (value) => { return value * (-0.5); });
+  const y2 = useTransform(scrollY, (value) => { if (isDesktop) return value * (-0.4); });
 
   return (
     <div className={styles.about}>

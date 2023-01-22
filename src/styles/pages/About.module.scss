@@ -7,13 +7,16 @@
 }
 
 .about {
-   min-height: 100vh;
+   height: 100%;
    padding: 40px;
 
-   color: white;
+   color: black;
 
    &_content {
-      max-width: 950px;
+      background-color: rgba(240, 248, 255, 0.859);
+      border-radius: 20px;
+      max-width: 1050px;
+      padding: 50px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
