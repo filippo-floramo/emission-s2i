@@ -7,6 +7,9 @@ interface TextFaderProps {
    sourceText: string[]
 }
 
+const FADE_MS = 1200;
+const SET_RANDOM_INDEX_MS = FADE_MS * 2;
+
 export default function TextFader({ sourceText }: TextFaderProps) {
 
    const [countryIndex, setCountryIndex] = useState<number>(0);
@@ -15,21 +18,23 @@ export default function TextFader({ sourceText }: TextFaderProps) {
    useEffect(() => {
       const fadeInterval = setInterval(() => {
          setFadeProp({ fade: fadeProp.fade === "fade-in" ? "fade-out" : "fade-in" });
-      }, 1200);
+      }, FADE_MS);
 
       return () => clearInterval(fadeInterval);
    }, [fadeProp]);
 
    useEffect(() => {
-      const interval = setInterval(() => {
+      const radomIndexInterval = setInterval(() => {
          const randomIndex = Math.floor(Math.random() * sourceText.length);
          setCountryIndex(randomIndex);
-      }, 2400);
+      }, SET_RANDOM_INDEX_MS);
 
-      return () => clearInterval(interval);
+      return () => clearInterval(radomIndexInterval);
    }, [sourceText.length]);
 
    return (
-      <span className={styles[fadeProp.fade]}>{sourceText[countryIndex]}</span>
+      <span className={styles[fadeProp.fade]}>
+         {sourceText[countryIndex]}
+      </span>
    );
 }
