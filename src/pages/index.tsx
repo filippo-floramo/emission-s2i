@@ -30,18 +30,18 @@ export default function Home({ countries }: HomeProps): JSX.Element {
 
   return (
     <motion.div
-      className={styles.home}
+      className="home"
       variants={HomeVariants}
       exit="exit"
     >
-      <div className={styles.home_container}>
-        <div className={styles.home_text}>
+      <div className="home_container">
+        <div className='home_text'>
           <h1>
-            You can't see it, but you can search for it. <br /> See the <span className={styles.co}>CO</span> levels in <span style={{ color: "green" }}>{<TextFader sourceText={countries} />}</span>
+            You can't see it, but you can search for it. <br /> See the <span className='co'>CO</span> levels in <span style={{ color: "green" }}>{<TextFader sourceText={countries} />}</span>
           </h1>
         </div>
-        <div className={styles.home_buttons}>
-          <Link href="/about" className={styles.btn}>
+        <div className='home_buttons'>
+          <Link href="/about" className='btn'>
             What is it all about?
           </Link>
         </div>
