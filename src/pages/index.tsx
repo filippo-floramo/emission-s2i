@@ -29,11 +29,12 @@ export default function Home({ countries }: HomeProps): JSX.Element {
 
 
   return (
-    <motion.div className={styles.home}>
-      <motion.div className={styles.home_container}
-        variants={HomeVariants}
-        exit="exit"
-      >
+    <motion.div
+      className={styles.home}
+      variants={HomeVariants}
+      exit="exit"
+    >
+      <div className={styles.home_container}>
         <div className={styles.home_text}>
           <h1>
             You can't see it, but you can search for it. <br /> See the <span className={styles.co}>CO</span> levels in <span style={{ color: "green" }}>{<TextFader sourceText={countries} />}</span>
@@ -44,7 +45,7 @@ export default function Home({ countries }: HomeProps): JSX.Element {
             What is it all about?
           </Link>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }
