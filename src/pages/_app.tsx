@@ -10,7 +10,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <Layout>
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode="wait">
           <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
       </Layout>
