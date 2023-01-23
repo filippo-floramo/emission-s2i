@@ -5,7 +5,7 @@ import useEmissionAtoms from '../../../atoms/emissionAtoms';
 import styles from './ModalCloseButton.module.scss';
 
 export default function ModalCloseButton(): JSX.Element {
-  const { setIsModalOpen, setIsCountrySearch } = useStateAtoms();
+  const { setIsModalOpen } = useStateAtoms();
   const { setEmissionQueries } = useEmissionAtoms();
 
   return (
@@ -14,7 +14,6 @@ export default function ModalCloseButton(): JSX.Element {
         className={styles.close_button}
         onClick={() => {
           setIsModalOpen(false);
-          setIsCountrySearch(null);
           setEmissionQueries({
             countryCode: undefined,
             latitude: undefined,

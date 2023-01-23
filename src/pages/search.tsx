@@ -1,6 +1,7 @@
 import useStateAtoms from '../atoms/atoms';
 import styles from '../styles/pages/Search.module.scss';
 import ModalIndex from '../components/Modal/ModalIndex';
+import { AnimatePresence } from "framer-motion";
 import useEmissionAtoms from '../atoms/emissionAtoms';
 
 export default function Search(): JSX.Element {
@@ -9,7 +10,9 @@ export default function Search(): JSX.Element {
 
   return (
     <>
-      {isModalOpen && <ModalIndex />}
+      <AnimatePresence mode='wait'>
+        {isModalOpen && <ModalIndex key="modal" />}
+      </AnimatePresence>
       <div className={styles.search}>
         <div className={styles.search_container}>
           <h1 className={styles.search_cta}>Search by:</h1>
