@@ -21,17 +21,13 @@
    </g> -->
 <defs>
    <linearGradient id="lgrad" x1="100%" y1="8%" x2="0%" y2="92%" >
-    
-          <stop offset="0%" style="stop-color:rgb(230,0,0);stop-opacity:1.00" />
-          <stop offset="65%" style="stop-color:rgb(170,8,41);stop-opacity:1.00" />
-
-    </linearGradient>
-       <linearGradient id="lgrad2" x1="39%" y1="100%" x2="61%" y2="0%" >
-    
-          <stop offset="0%" style="stop-color:rgb(65,65,65);stop-opacity:1.00" />
-          <stop offset="65%" style="stop-color:rgb(88,90,95);stop-opacity:1.00" />
-
-    </linearGradient>
+      <stop offset="0%" style="stop-color:rgb(230,0,0);stop-opacity:1.00" />
+      <stop offset="65%" style="stop-color:rgb(170,8,41);stop-opacity:1.00" />
+   </linearGradient>
+   <linearGradient id="lgrad2" x1="39%" y1="100%" x2="61%" y2="0%" >
+      <stop offset="0%" style="stop-color:rgb(65,65,65);stop-opacity:1.00" />
+      <stop offset="65%" style="stop-color:rgb(88,90,95);stop-opacity:1.00" />
+   </linearGradient>
 <style>
 .cls-1{fill:url(#lgrad);}.cls-2{fill:url(#lgrad2);}
 

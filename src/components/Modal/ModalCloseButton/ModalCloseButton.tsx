@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import Image from 'next/image';
 import useStateAtoms from '../../../atoms/atoms';
 import useEmissionAtoms from '../../../atoms/emissionAtoms';
 import styles from './ModalCloseButton.module.scss';
@@ -23,7 +23,7 @@ export default function ModalCloseButton(): JSX.Element {
             endDate: undefined,
           });
         }}>
-        Close
+        <Image width={20} height={20} src="/close-icon.svg" alt="close button"></Image>
       </button>
     </>
   );

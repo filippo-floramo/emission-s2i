@@ -11,8 +11,6 @@ export default function ModalTextFields(): JSX.Element {
 
   return (
     <div className={styles.coordinates}>
-      <p> Coordinates</p>
-
       <TextField
         id="latitude"
         placeholder="Latitude"

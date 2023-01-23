@@ -17,8 +17,6 @@ export default function ModalDatePickers(): JSX.Element {
 
   return (
     <div className={styles.date_range}>
-      <p>Pick the date Range</p>
-
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker
           label="Start Date"

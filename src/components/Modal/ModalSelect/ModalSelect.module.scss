@@ -1,5 +1,6 @@
 .select {
-
+   margin-top: 45px;
+   
    .country_select {
       width: 200px;
       z-index: 30;
@@ -7,9 +8,5 @@
       .select__control {
          height: 50px;
       }
-   }
-
-   p {
-      text-align: center;
    }
 }

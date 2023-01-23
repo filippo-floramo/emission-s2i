@@ -1,0 +1,24 @@
+.search_modal {
+   width: 130px;
+   height: 40px;
+   margin-top: 20px;
+   background-color: #E60000;
+   border: none;
+   border-radius: 3px;
+   
+   color: white;
+   font-family: "source-sans-pro";
+   font-weight: 600;
+   font-size: medium ;
+
+   cursor: pointer;
+   
+   &:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+   }
+   &:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+   }
+}

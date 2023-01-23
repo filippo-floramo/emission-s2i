@@ -18,8 +18,6 @@ export default function ModalSelect(): JSX.Element {
 
   return (
     <div className={styles.select}>
-      <p>Country</p>
-
       <Select
         name="country"
         className={styles.country_select}

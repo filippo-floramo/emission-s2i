@@ -1,6 +1,7 @@
-import * as React from 'react';
 import { useEmissionApi } from '../../../hooks/useEmissionApi';
 import { useInputHandler } from '../../../hooks/useInputHandler';
+import styles from "./ModalSearchButton.module.scss";
+
 
 export default function ModalSearchButton(): JSX.Element {
   const { isDataLoading } = useEmissionApi();
@@ -12,10 +13,11 @@ export default function ModalSearchButton(): JSX.Element {
         <>Loading..</>
       ) : (
         <button
+          className={styles.search_modal}
           onClick={() => {
             handleInputs();
           }}>
-          Click Me
+          Search!
         </button>
       )}
     </>

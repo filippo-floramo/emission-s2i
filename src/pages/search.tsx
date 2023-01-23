@@ -11,39 +11,41 @@ export default function Search(): JSX.Element {
     <>
       {isModalOpen && <ModalIndex />}
       <div className={styles.search}>
-        <h1 className={styles.search_cta}>Search by:</h1>
-        <div className={styles.search_buttons}>
-          <button
-            className={styles.search_btn}
-            onClick={() => {
-              setIsCountrySearch(true);
-              setIsModalOpen(true);
-              setEmissionQueries({
-                countryCode: undefined,
-                latitude: undefined,
-                longitude: undefined,
-                startDate: undefined,
-                endDate: undefined,
-              });
-            }}>
-            Country
-          </button>
-          <p>or</p>
-          <button
-            className={styles.search_btn}
-            onClick={() => {
-              setIsCountrySearch(false);
-              setIsModalOpen(true);
-              setEmissionQueries({
-                countryCode: undefined,
-                latitude: undefined,
-                longitude: undefined,
-                startDate: undefined,
-                endDate: undefined,
-              });
-            }}>
-            Coordinates
-          </button>
+        <div className={styles.search_container}>
+          <h1 className={styles.search_cta}>Search by:</h1>
+          <div className={styles.search_buttons}>
+            <button
+              className={styles.search_btn}
+              onClick={() => {
+                setIsCountrySearch(true);
+                setIsModalOpen(true);
+                setEmissionQueries({
+                  countryCode: undefined,
+                  latitude: undefined,
+                  longitude: undefined,
+                  startDate: undefined,
+                  endDate: undefined,
+                });
+              }}>
+              Country
+            </button>
+            <p>or</p>
+            <button
+              className={styles.search_btn}
+              onClick={() => {
+                setIsCountrySearch(false);
+                setIsModalOpen(true);
+                setEmissionQueries({
+                  countryCode: undefined,
+                  latitude: undefined,
+                  longitude: undefined,
+                  startDate: undefined,
+                  endDate: undefined,
+                });
+              }}>
+              Coordinates
+            </button>
+          </div>
         </div>
       </div>
     </>
