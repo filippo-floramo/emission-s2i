@@ -29,7 +29,7 @@ export default function Home({ countries }: HomeProps): JSX.Element {
 
 
   return (
-    <div className={styles.home}>
+    <motion.div className={styles.home}>
       <motion.div className={styles.home_container}
         variants={HomeVariants}
         exit="exit"
@@ -45,7 +45,7 @@ export default function Home({ countries }: HomeProps): JSX.Element {
           </Link>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
