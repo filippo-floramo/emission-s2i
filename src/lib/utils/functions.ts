@@ -28,11 +28,12 @@ export const getDates = (rangeOption: TimeRangeOptions | null): DateRange | unde
 };
 
 export const manageData = (data: EmissionData[]): EmissionData[] => {
-  const sortedData = data.slice().sort((a, b): number => {
-    const first = a.start.match(/[0-9]+/g)?.join('');
-    const second = b.start.match(/[0-9]+/g)?.join('');
+  const sortedData = data.sort((a, b): number => {
 
-    return Number(first) - Number(second);
+    const first = new Date(a.start).getTime();
+    const second = new Date(b.start).getTime();
+
+    return first - second;
   });
 
   const formattedData: EmissionData[] = sortedData.map((data) => {

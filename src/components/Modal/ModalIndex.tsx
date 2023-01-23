@@ -18,7 +18,6 @@ const ModalVariants: Variants = {
     scale: 0.1,
     transition: { duration: 0.5 },
   }
-
 };
 
 export default function ModalIndex(): JSX.Element {
