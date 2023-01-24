@@ -7,8 +7,8 @@ interface ChartContainerProps {
 
 export default function ChartContainer({ children }: ChartContainerProps): JSX.Element {
   return (
-    <>
-      <div className={styles.chart_container}>{children}</div>
-    </>
+    <div className={styles.chart_container}>
+      {children}
+    </div>
   );
 }
