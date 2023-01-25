@@ -12,28 +12,27 @@ const ModalVariants: Variants = {
   initial: { scale: 0.7 },
   animate: {
     scale: 1,
-    transition: { duration: 0.2 }
+    transition: {
+      scale: {
+        duration: 0.3,
+        ease: "backOut"
+      }
+    }
   },
-  exit: {
-    scale: 0.1,
-    transition: { duration: 0.5 },
-  }
 };
 
 export default function ModalIndex(): JSX.Element {
   const { isCountrySearch } = useStateAtoms();
 
   return (
-    <motion.div
+    <div
       className={styles.backdrop}
-      exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
       <motion.div
         className={styles.modal_container}
         variants={ModalVariants}
         initial="initial"
         animate="animate"
-        exit="exit"
       >
         <ModalCloseButton />
         <h1>Choose where and when.</h1>
@@ -41,6 +40,6 @@ export default function ModalIndex(): JSX.Element {
         <ModalDatePickers />
         <ModalSearchButton />
       </motion.div>
-    </motion.div>
+    </div>
   );
 }

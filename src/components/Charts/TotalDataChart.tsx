@@ -34,8 +34,17 @@ export default function TotalDataChart(): JSX.Element {
                styles={{
                   container: (base) => ({
                      ...base,
-                     maxWidth: "200px"
-                  })
+                     maxWidth: "200px",
+                  }),
+                  control: (base) => ({
+                     ...base,
+                     height: "30px",
+                     cursor: "pointer"
+                  }),
+                  option: (base) => ({
+                     ...base,
+                     cursor: "pointer"
+                  }),
                }}
             />
          </ChartDetailsContainer>
