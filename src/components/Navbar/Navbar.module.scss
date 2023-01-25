@@ -27,7 +27,6 @@
       padding-inline: 30px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
 
       font-size: 1.5rem;
@@ -52,6 +51,25 @@
          font-size: 1.2rem;
          font-weight: 600;
 
+      }
+   }
+}
+
+@media (max-width: 768px) {
+
+   .navbar {
+      background-image: none;
+      transition: background-color 0.3s ease;
+
+      &.scrolled {
+         background-color: #208759;
+      }
+
+      &_container {
+         
+         .name {
+            align-self: center;
+         }
       }
    }
 }
