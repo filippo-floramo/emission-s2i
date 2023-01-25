@@ -33,10 +33,16 @@ export default function TotalDataChart(): JSX.Element {
                options={timeRangeOptions || null}
                isClearable={false}
                isSearchable={false}
+               styles={{
+                  container: (base) => ({
+                     ...base, 
+                     maxWidth: "200px"
+                  })
+               }}
             />
          </ChartDetailsContainer>
-         <ResponsiveContainer height={300} width="100%" >
-            <LineChart width={600} height={300} data={selectableData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+         <ResponsiveContainer height={350} width="100%" >
+            <LineChart data={selectableData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                <Line
                   type="step"
                   dataKey="average"

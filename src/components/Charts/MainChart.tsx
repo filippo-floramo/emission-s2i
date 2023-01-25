@@ -20,7 +20,7 @@ export default function MainChart(): JSX.Element {
       <ChartDetailsContainer typeResult='Your Search Results'>
         <ChartCounter data={mainEmissionData} />
       </ChartDetailsContainer>
-      <ResponsiveContainer height={300} width="100%">
+      <ResponsiveContainer height={350} width="100%">
         <LineChart
           width={600}
           height={300}
