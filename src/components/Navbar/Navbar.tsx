@@ -1,19 +1,19 @@
-import * as React from 'react';
-import Link from 'next/link';
+import useWindowScrollPositions from "../../hooks/useWindowScrollPosition";
 import styles from "./Navbar.module.scss";
+import Image from "next/image";
 
 export default function Navbar() {
 
+   const { scrollY } = useWindowScrollPositions();
+
    return (
-      <nav className={styles.navbar}>
+      <nav
+         className={`${styles.navbar} ${scrollY ? styles.scrolled : ""}`}>
          <div className={styles.navbar_container}>
             <div className={styles.name}>
-               <span>e</span>
-               <span> - mission</span>
+               <span className={styles.letter}><Image src="/letter-e.svg" width={20} height={20} alt="Letter e"  /></span>
+               <span> mission</span>
             </div>
-            <Link href="/search" className={styles.search}>
-               Search
-            </Link>
          </div>
       </nav>
    );

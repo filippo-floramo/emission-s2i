@@ -1,34 +1,57 @@
 @import "../../styles/variables.scss";
 
 
+
 .navbar {
    position: fixed;
+   height: $nav-height;
    display: flex;
    align-items: center;
    top: 0%;
    width: 100%;
-   height: $nav-height;
-   background-color: antiquewhite;
+   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.271);
    z-index: 5;
+   background-image: url("/nav-background.svg");
+   background-repeat: no-repeat;
+   background-position: -50px;
+   background-size: 0%;
+   transition: background-size 1s ease-out;
+
+   &.scrolled {
+      background-size: 120%;
+   }
 
    &_container {
       width: 100%;
       height: 100%;
       padding-inline: 30px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
 
       font-size: 1.5rem;
+      transition: all 0.5s ease;
 
-      span:nth-child(1) {
-         font-style: italic;
+      .name {
+         align-self: flex-start;
+         background-color: #208759;
+         padding: 0 8px;
+         border-radius: 5px;
+         color: white;
+         display: flex;
+         gap: 6px;
+
+         .letter {
+            display: flex;
+            align-items: center;
+         }
       }
 
       .search {
-         color: black;
          font-size: 1.2rem;
          font-weight: 600;
+
       }
    }
 }

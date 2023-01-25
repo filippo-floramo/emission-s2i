@@ -16,7 +16,7 @@ export default function Home({ countries }: HomeProps): JSX.Element {
       <div className={styles.home_container}>
         <div className={styles.home_text}>
           <h1>
-            You can't see it, but you can search for it. <br /> See the <span className={styles.co}>CO</span> levels in <span style={{ color: "green" }}>{<TextFader sourceText={countries} />}</span>
+            You can't see it, but you can search for it. <br /> See the <span className={styles.co}>CO</span> levels in <span style={{ color: "#208759" }}>{<TextFader sourceText={countries} />}</span>
           </h1>
         </div>
         <div className={styles.home_buttons}>
