@@ -7,17 +7,16 @@
    justify-content: space-between;
    gap: 20px;
 
-   h3 {
-      color: rgb(94, 94, 94);
-   }
-
+   
+   
    &_content {
+      color: rgb(64, 64, 64);
       width: 100%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       align-items: center;
       justify-items: center;
-      
+
 
       :last-child {
          grid-column-start: 3;
@@ -34,6 +33,7 @@
 @media (max-width: 1048px) {
    .details {
       padding: 0 0;
+
       &_content {
          display: flex;
          flex-direction: column;

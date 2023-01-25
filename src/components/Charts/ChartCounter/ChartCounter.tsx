@@ -6,18 +6,32 @@ interface ChartCounterProps {
    data: EmissionData[]
 }
 
+const getMean = (data: EmissionData[]) => {
+   let color;
 
+   const mean = data.reduce((sum, currItem) => { return (sum + currItem.average); }, 0) / data.length;
+   const dataMean = Number((mean * 100).toFixed(2));
+
+   if (dataMean < 2.5) {
+      color = "#208759";
+   } else if (dataMean < 3.5) {
+      color = "#ffc800";
+   } else {
+      color = "red";
+   }
+
+   return { dataMean, color };
+};
 
 
 export default function ChartCounter({ data }: ChartCounterProps): JSX.Element {
 
-   const mean = data.reduce((sum, currItem) => { return (sum + currItem.average); }, 0) / data.length;
+   const { dataMean, color } = getMean(data);
 
-   const floated = mean * 100;
    return (
       <div className={styles.counter}>
-         {`Total average: ${floated.toFixed(2)} ⋅ 10⁻² mol/m²`}
-      </div>
+         Total average: <span style={{ color: color }}>{dataMean}</span> ⋅ 10⁻² mol / m²
+      </div >
    );
 }
 
