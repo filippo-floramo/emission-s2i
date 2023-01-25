@@ -1,4 +1,4 @@
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import useEmissionAtoms from '../../atoms/emissionAtoms';
 import useHasMounted from '../../hooks/useHasMounted';
 import ChartContainer from './ChartContainer/ChartContainer';
@@ -17,26 +17,33 @@ export default function MainChart(): JSX.Element {
 
   return (
     <ChartContainer >
-      <ChartDetailsContainer typeResult='Your Search Results'>
+      <ChartDetailsContainer typeResult='Your Search Results (in ⋅ 10⁻² mol / m²)'>
         <ChartCounter data={mainEmissionData} />
       </ChartDetailsContainer>
       <ResponsiveContainer height={350} width="100%">
-        <LineChart
+        <BarChart
           width={600}
           height={300}
           data={mainEmissionData || []}
           margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-          <Line
+          <Bar
             type="step"
             dataKey="average"
-            stroke="#000000"
-            dot={(mainEmissionData || []).length < 60 ? true : false}
+            fill='#de542c'
+            maxBarSize={70}
+            z={3}
           />
-          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-          <XAxis dataKey="end" />
-          <YAxis />
-          <Tooltip />
-        </LineChart>
+          <XAxis
+            dataKey="end"
+            tick={{ fontSize: 13 }}
+          />
+          <YAxis
+            tick={{ fontSize: 13 }}
+          />
+          <Tooltip
+          cursor={{fill: "#f7f4bf87"}}
+          />
+        </BarChart>
       </ResponsiveContainer>
     </ChartContainer>
   );

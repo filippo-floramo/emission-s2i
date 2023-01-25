@@ -10,7 +10,7 @@ const getMean = (data: EmissionData[]) => {
    let color;
 
    const mean = data.reduce((sum, currItem) => { return (sum + currItem.average); }, 0) / data.length;
-   const dataMean = Number((mean * 100).toFixed(2));
+   const dataMean = Number(mean.toFixed(2));
 
    if (dataMean < 2.5) {
       color = "#208759";
@@ -30,7 +30,7 @@ export default function ChartCounter({ data }: ChartCounterProps): JSX.Element {
 
    return (
       <div className={styles.counter}>
-         Total average: <span style={{ color: color }}>{dataMean}</span> ⋅ 10⁻² mol / m²
+         Total average: <span style={{ color: color }}>{dataMean}</span>
       </div >
    );
 }

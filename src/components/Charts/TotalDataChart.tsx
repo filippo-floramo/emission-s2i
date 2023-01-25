@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { getRangeData } from "../../lib/utils/functions";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { timeRangeOptions } from "../../lib/utils/miscellaneous";
 import ChartContainer from "./ChartContainer/ChartContainer";
 import ChartDetailsContainer from './ChartDetailsContainer/ChartDetailsContainer';
@@ -25,7 +25,7 @@ export default function TotalDataChart(): JSX.Element {
 
    return (
       <ChartContainer>
-         <ChartDetailsContainer typeResult='Complete Results'>
+         <ChartDetailsContainer typeResult='Complete Results (in ⋅ 10⁻² mol / m²)'>
             <ChartCounter data={selectableData} />
             <Select
                value={timeRange}
@@ -35,27 +35,52 @@ export default function TotalDataChart(): JSX.Element {
                isSearchable={false}
                styles={{
                   container: (base) => ({
-                     ...base, 
+                     ...base,
                      maxWidth: "200px"
                   })
                }}
             />
          </ChartDetailsContainer>
          <ResponsiveContainer height={350} width="100%" >
-            <LineChart data={selectableData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-               <Line
-                  type="step"
-                  dataKey="average"
-                  stroke="#8884d8"
-                  dot={(selectableData).length < 60 ? true : false}
-               />
-               <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-               <XAxis
-                  dataKey="end"
-               />
-               <YAxis />
-               <Tooltip />
-            </LineChart>
+            {
+               selectableData.length > 500 ?
+                  <AreaChart data={selectableData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                     <Area
+                        type="step"
+                        dataKey="average"
+                        stroke='#004aad'
+                        fill='lightblue'
+                        dot={(selectableData).length < 60 ? true : false}
+                     />
+                     <XAxis
+                        dataKey="end"
+                        tick={{ fontSize: 13 }}
+                     />
+                     <YAxis
+                        tick={{ fontSize: 13 }}
+                     />
+                     <Tooltip />
+                  </AreaChart>
+                  :
+                  <BarChart data={selectableData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                     <Bar
+                        type="step"
+                        dataKey="average"
+                        fill='#1f57a1'
+                        maxBarSize={70}
+                     />
+                     <XAxis
+                        dataKey="end"
+                        tick={{ fontSize: 13 }}
+                     />
+                     <YAxis
+                        tick={{ fontSize: 13 }}
+                     />
+                     <Tooltip
+                        cursor={{ fill: "#c7f9ee5b" }}
+                     />
+                  </BarChart>
+            }
          </ResponsiveContainer>
       </ChartContainer>
    );

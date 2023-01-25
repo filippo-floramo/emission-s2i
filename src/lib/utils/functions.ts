@@ -41,7 +41,7 @@ export const manageData = (data: EmissionData[]): EmissionData[] => {
     const unformattedEnd = data.end;
     const unformattedStart = data.start;
 
-    const average = Number(unfixedAverage.toFixed(4));
+    const average = Number((unfixedAverage * 100).toFixed(3));
     const start = formatDate(unformattedStart);
     const end = formatDate(unformattedEnd);
 
