@@ -10,10 +10,9 @@ export default function MainChart(): JSX.Element {
   const hasMounted = useHasMounted();
   const { mainEmissionData } = useEmissionAtoms();
 
-  if (!hasMounted) return <div>Nothign to be found</div>;
+  if (!hasMounted) return <ChartContainer>Ooops, something went wrong</ChartContainer>;
 
-
-  if (!mainEmissionData || mainEmissionData.length === 0) return <>Data Not found</>;
+  if (!mainEmissionData || mainEmissionData.length === 0) return <ChartContainer>Data Not found</ChartContainer>;
 
   return (
     <ChartContainer >
@@ -41,7 +40,7 @@ export default function MainChart(): JSX.Element {
             tick={{ fontSize: 13 }}
           />
           <Tooltip
-          cursor={{fill: "#f7f4bf87"}}
+            cursor={{ fill: "#f7f4bf87" }}
           />
         </BarChart>
       </ResponsiveContainer>

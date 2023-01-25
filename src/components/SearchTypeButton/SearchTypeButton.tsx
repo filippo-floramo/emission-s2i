@@ -12,7 +12,7 @@ export default function SearchTypeButton({ type }: SearchTypeButtonProps) {
 
 
    const { setIsCountrySearch, setIsModalOpen } = useStateAtoms();
-   const { setEmissionQueries } = useEmissionAtoms();
+   const { setEmissionQueries, setTotalEmissionData, setMainEmissionData } = useEmissionAtoms();
 
 
    return (
@@ -28,6 +28,8 @@ export default function SearchTypeButton({ type }: SearchTypeButtonProps) {
                startDate: undefined,
                endDate: undefined,
             });
+            setMainEmissionData(null);
+            setTotalEmissionData(null);
          }}>
          {type}
       </button>
