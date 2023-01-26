@@ -6,13 +6,10 @@ import styles from '../styles/pages/Results.module.scss';
 
 export default function Results(): JSX.Element {
   return (
-    <>
-      <div className={styles.results}>
-        <MainChart />
-        <TotalDataChart />
-        <FloatingSearchButton />
-        risultino
-      </div>
-    </>
+    <div className={styles.results}>
+      <MainChart />
+      <TotalDataChart />
+      <FloatingSearchButton />
+    </div>
   );
 }

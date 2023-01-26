@@ -50,7 +50,7 @@ export default function TotalDataChart(): JSX.Element {
          </ChartDetailsContainer>
          <ResponsiveContainer height={350} width="100%" >
             {
-               selectableData.length > 500 ?
+               selectableData.length > 100 ?
                   <AreaChart data={selectableData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                      <Area
                         type="step"

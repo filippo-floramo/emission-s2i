@@ -1,6 +1,6 @@
 import { useEmissionApi } from '../../../hooks/useEmissionApi';
 import { useInputHandler } from '../../../hooks/useInputHandler';
-import LoadingSpinner from '../../LoadingSpinner/LoadingSPinner';
+import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 import styles from "./ModalSearchButton.module.scss";
 
 

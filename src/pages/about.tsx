@@ -3,7 +3,7 @@ import {
   motion,
   useTransform,
 } from "framer-motion";
-import { UseIsDesktop } from "../lib/utils/mediaQueries";
+import { useIsDesktop } from "../hooks/useMediaQuery";
 import FloatingSearchButton from "../components/FloatingSearchButton/FloatingSearchButton";
 import styles from '../styles/pages/About.module.scss';
 
@@ -26,7 +26,7 @@ const AboutVariants = {
 
 export default function About(): JSX.Element {
 
-  const isDesktop = UseIsDesktop();
+  const isDesktop = useIsDesktop();
 
   const { scrollY } = useScroll();
   const y2 = useTransform(scrollY, (value) => { if (isDesktop) return value * (-0.4); });
