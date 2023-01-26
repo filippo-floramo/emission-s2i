@@ -1,6 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import useEmissionAtoms from '../../atoms/emissionAtoms';
-import useHasMounted from '../../hooks/useHasMounted';
+import {useHasMounted} from '../../hooks/useHasMounted';
 import ChartContainer from './ChartContainer/ChartContainer';
 import ChartCounter from './ChartCounter/ChartCounter';
 import ChartDetailsContainer from './ChartDetailsContainer/ChartDetailsContainer';

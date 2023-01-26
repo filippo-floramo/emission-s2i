@@ -2,13 +2,13 @@ import { useMemo } from 'react';
 import { getRangeData } from "../../lib/utils/functions";
 import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { timeRangeOptions } from "../../lib/utils/miscellaneous";
+import { useHasMounted } from '../../hooks/useHasMounted';
+import useStateAtoms from "../../atoms/atoms";
+import useEmissionAtoms from '../../atoms/emissionAtoms';
 import ChartContainer from "./ChartContainer/ChartContainer";
 import ChartDetailsContainer from './ChartDetailsContainer/ChartDetailsContainer';
 import ChartCounter from "./ChartCounter/ChartCounter";
-import useStateAtoms from "../../atoms/atoms";
 import Select from "react-select";
-import useEmissionAtoms from '../../atoms/emissionAtoms';
-import useHasMounted from '../../hooks/useHasMounted';
 
 
 export default function TotalDataChart(): JSX.Element {

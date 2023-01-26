@@ -18,6 +18,8 @@ const modalOpen = atom<boolean>(false);
 const searchType = atomWithStorage<boolean | null>('search-type', null);
 const range = atomWithStorage<TimeRangeOptions | null>('time-range', timeRangeOptions[0]);
 
+//Export custom hook
+
 export default function useStateAtoms(): Atoms {
   const [isModalOpen, setIsModalOpen] = useAtom(modalOpen);
 

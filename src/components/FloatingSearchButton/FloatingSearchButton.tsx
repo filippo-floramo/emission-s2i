@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import useWindowScrollPositions from "../../hooks/useWindowScrollPosition";
+import { useWindowScrollPositions } from "../../hooks/useWindowScrollPosition";
 import styles from "./FloatingSearchButton.module.scss";
 
 

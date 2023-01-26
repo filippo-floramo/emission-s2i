@@ -6,7 +6,7 @@ interface ScrollTypes {
    scrollY: number;
 }
 
-export default function useWindowScrollPositions() {
+export function useWindowScrollPositions() {
 
    const [scrollPosition, setPosition] = useState<ScrollTypes>({ isScrollUp: false, scrollY: 0 });
 

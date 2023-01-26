@@ -1,14 +1,22 @@
 import { EmissionData, EmissionQuery } from '../../interfaces/interfaces';
 import { TimeRangeOptions } from '../../interfaces/interfaces';
 
-// here goes the time range
 
 interface DateRange {
   to: number;
   from: number;
 }
 
-export const getDates = (rangeOption: TimeRangeOptions | null): DateRange | undefined => {
+// FUNCTION TO **NOT** BE EXPORTED
+
+const formatDate = (date: string): string => {
+  const fullDate = new Date(date);
+  const dateFormatted = `${fullDate.getMonth() + 1}/${fullDate.getDate()}/${fullDate.getFullYear()} `;
+
+  return dateFormatted;
+};
+
+const getDates = (rangeOption: TimeRangeOptions | null): DateRange | undefined => {
   if (rangeOption && rangeOption.amount) {
     switch (rangeOption.type) {
       case 'year':
@@ -26,6 +34,8 @@ export const getDates = (rangeOption: TimeRangeOptions | null): DateRange | unde
     }
   }
 };
+
+// FUNCTIONS TO BE EXPORTED
 
 export const manageData = (data: EmissionData[]): EmissionData[] => {
   const sortedData = data.sort((a, b): number => {
@@ -99,10 +109,5 @@ export const formatMainSearchData = (
   return filteredSearchdata;
 };
 
-const formatDate = (date: string): string => {
-  const fullDate = new Date(date);
-  const dateFormatted = `${fullDate.getMonth() + 1}/${fullDate.getDate()}/${fullDate.getFullYear()} `;
 
-  return dateFormatted;
-};
 

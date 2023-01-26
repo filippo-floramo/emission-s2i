@@ -1,4 +1,4 @@
-import useWindowScrollPositions from "../../hooks/useWindowScrollPosition";
+import { useWindowScrollPositions } from "../../hooks/useWindowScrollPosition";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Navbar.module.scss";

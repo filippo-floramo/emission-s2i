@@ -27,8 +27,13 @@ const emissionQuery = atom<EmissionQuery>({
   endDate: undefined,
 });
 
+//Declaring Atoms
+
 const mainData = atomWithStorage<EmissionData[] | null>('main-data', null);
 const totalData = atomWithStorage<EmissionData[] | null>('total-data', null);
+
+
+//Export custom hook
 
 export default function useEmissionAtoms(): EmissionAtoms {
   const [emissionQueries, setEmissionQueries] = useAtom(emissionQuery);
