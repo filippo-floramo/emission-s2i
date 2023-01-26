@@ -51,6 +51,8 @@ This Project had the following requirements:
 
 - [React Select](https://react-select.com/home)
 
+- [Recharts](https://recharts.org/en-US/)
+
 
 
 ## Getting Started
