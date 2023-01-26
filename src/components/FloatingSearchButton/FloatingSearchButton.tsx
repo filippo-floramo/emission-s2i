@@ -7,13 +7,13 @@ import styles from "./FloatingSearchButton.module.scss";
 
 export default function FloatingSearchButton() {
 
-   const { isScrollUp } = useWindowScrollPositions();
+   const { isScrollDown } = useWindowScrollPositions();
 
 
    return (
       <Link
          href="/search"
-         style={{ transform: isScrollUp ? "" : "translateY(90px)" }}
+         style={{ transform: isScrollDown ? "translateY(90px)" : "" }}
          className={styles.float_search}
       >
          <Image className={styles.icon} src="/search-icon.svg" alt=" search icon" width={27} height={27} />

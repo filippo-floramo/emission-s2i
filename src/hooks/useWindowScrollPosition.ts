@@ -2,24 +2,24 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 
 interface ScrollTypes {
-   isScrollUp: boolean;
+   isScrollDown: boolean;
    scrollY: number;
 }
 
 export function useWindowScrollPositions() {
 
-   const [scrollPosition, setPosition] = useState<ScrollTypes>({ isScrollUp: false, scrollY: 0 });
+   const [scrollPosition, setPosition] = useState<ScrollTypes>({ isScrollDown: false, scrollY: 0 });
 
    const previousScrollY = useRef(0);
 
    const updatePosition = useCallback(() => {
 
       const ScrollY: number = window.scrollY;
-      const isScrollUp: boolean = previousScrollY.current > ScrollY ? true : false;
+      const isScrollDown: boolean = previousScrollY.current < ScrollY ? true : false;
 
       previousScrollY.current = ScrollY;
 
-      setPosition({ isScrollUp, scrollY });
+      setPosition({ isScrollDown, scrollY });
    }, []);
 
    useEffect(() => {
