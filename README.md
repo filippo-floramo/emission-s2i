@@ -41,6 +41,8 @@ This Project had the following requirements:
 
 - [Axios](https://github.com/axios/axios)
 
+- [React Query](https://tanstack.com/query/latest)
+
 ##### Animations:
 
 - [Framer Motion](https://github.com/framer/motion)
