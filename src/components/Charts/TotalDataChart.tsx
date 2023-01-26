@@ -51,7 +51,7 @@ export default function TotalDataChart(): JSX.Element {
          <ResponsiveContainer height={350} width="100%" >
             {
                selectableData.length > 100 ?
-                  <AreaChart data={selectableData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                  <AreaChart data={selectableData} margin={{ top: 5, right: 35, bottom: 5, left: 0 }}>
                      <Area
                         type="step"
                         dataKey="average"
@@ -69,7 +69,7 @@ export default function TotalDataChart(): JSX.Element {
                      <Tooltip />
                   </AreaChart>
                   :
-                  <BarChart data={selectableData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                  <BarChart data={selectableData} margin={{ top: 5, right: 35, bottom: 5, left: 0 }}>
                      <Bar
                         type="step"
                         dataKey="average"

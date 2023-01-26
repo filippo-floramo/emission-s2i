@@ -41,8 +41,6 @@ export function useEmissionApi(): ApiTypes {
 
       const sortedTotalData = manageData(totalData);
 
-      console.log(sortedTotalData);
-
       setMainEmissionData(formatMainSearchData(sortedTotalData, emissionQueries));
       setTotalEmissionData(sortedTotalData);
     } catch (error) {
