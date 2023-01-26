@@ -1,7 +1,7 @@
 <p align="center">
 
    <a href="https://e-mission.netlify.app">
-      <img src="/public/favicon.svg">
+      <img width="50" height="50" src="/public/favicon.svg">
    </a>
 
    <h2 align="center">E-mission</h2>
