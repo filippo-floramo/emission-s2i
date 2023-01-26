@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+
+   <a href="https://e-mission.netlify.app">
+      <img src="/public/favicon.png">
+   </a>
+
+   <h2 align="center">E-mission</h2>
+   
+</p>
+
+
+# About the Project
+
+This project was built using [Next.js](https://nextjs.org/) and Typescript.
+
+It is a simple add that shows data about the carbon monoxide level accross the world.\
+The APIs come from [this site](https://emissions-api.org/).
+
+This Project had the following requirements:
+
+- Selectable date range
+
+- Possibility to search by country or coordinates
+
+- Simple UX/UI
+
+- Responsive design
+
+
+#### Libraries and technologies used:
+
+##### State Management:
+
+- [Jotai](https://jotai.org/) 
+
+##### Styles:
+
+- [SASS](https://github.com/sass/sass)
+
+##### Data Fetching:
+
+- [Axios](https://github.com/axios/axios)
+
+##### Animation
+
+- [Framer Motion](https://github.com/framer/motion)
+
+##### Components
+
+- [Material UI](https://mui.com/)
+
+- [React Select](https://react-select.com/home)
+
+
 
 ## Getting Started
 
-First, run the development server:
+1. Clone repository
 
-```bash
-npm run dev
-# or
-yarn dev
+```sh
+git clone https://github.com/filippo-floramo/meditactive.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```npm
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Run application
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```npm
+npm run dev
+```
+## Contact
 
-## Learn More
+- Gmail: filifloramo@gmail.com
 
-To learn more about Next.js, take a look at the following resources:
+- Linkedin: [Profile](https://www.linkedin.com/in/filippo-floramo-296154214/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Start2impact: [Personal Page](https://talent.start2impact.it/profile/filippo-floramo)
