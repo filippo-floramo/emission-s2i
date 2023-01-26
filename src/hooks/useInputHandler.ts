@@ -12,22 +12,13 @@ export function useInputHandler() {
   const { setIsModalOpen } = useStateAtoms();
 
   const { emissionQueries } = useEmissionAtoms();
-  const {
-    countryCode,
-    longitude,
-    latitude,
-    startDate,
-    endDate
-  } = emissionQueries;
-
-
+  const { countryCode, longitude, latitude, startDate, endDate } = emissionQueries;
 
   const handleInputs = () => {
-
     const hasDates = startDate && endDate ? true : false;
 
-    const startDateMs: number = new Date(startDate ? startDate : "").getTime();
-    const endDateMs: number = new Date(endDate ? endDate : "").getTime();
+    const startDateMs: number = new Date(startDate ? startDate : '').getTime();
+    const endDateMs: number = new Date(endDate ? endDate : '').getTime();
 
     const dateRange = endDateMs - startDateMs;
 
@@ -38,7 +29,7 @@ export function useInputHandler() {
     } else if (!hasDates) {
       alert('Please choose the date range');
     } else if (dateRange < 0) {
-      alert("Date range is invalid");
+      alert('Date range is invalid');
     } else if (!(countryCode || (longitude && latitude))) {
       alert('Please select and indication for the place');
     } else if (countryCode) {

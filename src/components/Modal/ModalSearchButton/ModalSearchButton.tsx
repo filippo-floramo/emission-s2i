@@ -1,8 +1,7 @@
 import { useEmissionApi } from '../../../hooks/useEmissionApi';
 import { useInputHandler } from '../../../hooks/useInputHandler';
 import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
-import styles from "./ModalSearchButton.module.scss";
-
+import styles from './ModalSearchButton.module.scss';
 
 export default function ModalSearchButton(): JSX.Element {
   const { isDataLoading } = useEmissionApi();

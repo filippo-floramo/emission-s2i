@@ -7,7 +7,6 @@ import ModalSearchButton from './ModalSearchButton/ModalSearchButton';
 import { motion, Variants } from 'framer-motion';
 import styles from './ModalIndex.module.scss';
 
-
 const ModalVariants: Variants = {
   initial: { scale: 0.7 },
   animate: {
@@ -15,9 +14,9 @@ const ModalVariants: Variants = {
     transition: {
       scale: {
         duration: 0.3,
-        ease: "backOut"
-      }
-    }
+        ease: 'backOut',
+      },
+    },
   },
 };
 
@@ -25,15 +24,8 @@ export default function ModalIndex(): JSX.Element {
   const { isCountrySearch } = useStateAtoms();
 
   return (
-    <div
-      className={styles.backdrop}
-    >
-      <motion.div
-        className={styles.modal_container}
-        variants={ModalVariants}
-        initial="initial"
-        animate="animate"
-      >
+    <div className={styles.backdrop}>
+      <motion.div className={styles.modal_container} variants={ModalVariants} initial="initial" animate="animate">
         <ModalCloseButton />
         <h1>Choose where and when.</h1>
         {isCountrySearch ? <ModalSelect /> : <ModalTextFields />}

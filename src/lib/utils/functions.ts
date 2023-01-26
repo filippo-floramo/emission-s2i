@@ -1,7 +1,6 @@
 import { EmissionData, EmissionQuery } from '../../interfaces/interfaces';
 import { TimeRangeOptions } from '../../interfaces/interfaces';
 
-
 interface DateRange {
   to: number;
   from: number;
@@ -39,7 +38,6 @@ const getDates = (rangeOption: TimeRangeOptions | null): DateRange | undefined =
 
 export const manageData = (data: EmissionData[]): EmissionData[] => {
   const sortedData = data.sort((a, b): number => {
-
     const first = new Date(a.start).getTime();
     const second = new Date(b.start).getTime();
 
@@ -61,18 +59,13 @@ export const manageData = (data: EmissionData[]): EmissionData[] => {
   return formattedData;
 };
 
-export const getRangeData = (
-  data: EmissionData[] | null,
-  range: TimeRangeOptions | null
-): EmissionData[] => {
-
+export const getRangeData = (data: EmissionData[] | null, range: TimeRangeOptions | null): EmissionData[] => {
   if (!data) return [];
 
   const rangeSelected = getDates(range);
 
   if (range?.type !== 'max') {
     const filteredData = data?.filter((data: EmissionData) => {
-
       if (!rangeSelected) return true;
 
       const date = new Date(data.start).getTime();
@@ -82,17 +75,14 @@ export const getRangeData = (
 
     return filteredData;
   } else {
-
     return data;
   }
 };
 
-
 export const formatMainSearchData = (
   mainEmissionData: EmissionData[] | null,
-  emissionQueries: EmissionQuery
+  emissionQueries: EmissionQuery,
 ): EmissionData[] => {
-
   const { startDate, endDate } = emissionQueries;
 
   if (!startDate || !endDate || !mainEmissionData) return [];
@@ -108,6 +98,3 @@ export const formatMainSearchData = (
 
   return filteredSearchdata;
 };
-
-
-

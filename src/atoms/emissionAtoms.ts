@@ -32,7 +32,6 @@ const emissionQuery = atom<EmissionQuery>({
 const mainData = atomWithStorage<EmissionData[] | null>('main-data', null);
 const totalData = atomWithStorage<EmissionData[] | null>('total-data', null);
 
-
 //Export custom hook
 
 export default function useEmissionAtoms(): EmissionAtoms {

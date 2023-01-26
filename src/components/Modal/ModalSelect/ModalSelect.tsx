@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 import styles from './ModalSelect.module.scss';
 import useEmissionAtoms from '../../../atoms/emissionAtoms';
 
-
 export default function ModalSelect(): JSX.Element {
   const { setEmissionQueries } = useEmissionAtoms();
 
@@ -12,7 +11,6 @@ export default function ModalSelect(): JSX.Element {
     queryKey: ['countryCodes'],
     queryFn: getCountries,
   });
-
 
   if (error) return <div>Data not found</div>;
 

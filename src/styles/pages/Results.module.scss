@@ -1,18 +1,17 @@
-@import "../variables.scss";
-
+@import '../variables.scss';
 
 .results::before {
-   content: "";
-   display: block;
-   height: $nav-height;
+  content: '';
+  display: block;
+  height: $nav-height;
 }
 
 .results {
-   width: 100%;
-   min-height: 120vh;
+  width: 100%;
+  min-height: 120vh;
 
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

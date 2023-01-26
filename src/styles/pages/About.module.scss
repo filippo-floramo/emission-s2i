@@ -1,62 +1,62 @@
-@import "../variables.scss";
+@import '../variables.scss';
 
 .about::before {
-   content: "";
-   display: block;
-   height: $nav-height;
+  content: '';
+  display: block;
+  height: $nav-height;
 }
 
 .about {
-   height: 100%;
-   padding-inline: clamp(10px, 1.3vw, 40px);
-   color: black;
+  height: 100%;
+  padding-inline: clamp(10px, 1.3vw, 40px);
+  color: black;
 
-   &_content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 1050px;
-      margin-top: 30px;
-      margin-inline: auto;
-      padding: clamp(25px, 5vw, 50px) clamp(15px, 5vw, 50px);
-      border-radius: 20px;
-      background-color: rgba(240, 248, 255, 0.933);
-      filter: drop-shadow(2px 8px 7px rgba(0, 0, 0, 0.152));
+  &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1050px;
+    margin-top: 30px;
+    margin-inline: auto;
+    padding: clamp(25px, 5vw, 50px) clamp(15px, 5vw, 50px);
+    border-radius: 20px;
+    background-color: rgba(240, 248, 255, 0.933);
+    filter: drop-shadow(2px 8px 7px rgba(0, 0, 0, 0.152));
 
-      h1 {
-         font-size: clamp(2rem, 8vw, 2.6rem);
-         text-align: center;
+    h1 {
+      font-size: clamp(2rem, 8vw, 2.6rem);
+      text-align: center;
+    }
+
+    .text_content {
+      margin-top: clamp(20px, 5vw, 55px);
+
+      h2 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+        text-align: center;
       }
 
-      .text_content {
-         margin-top: clamp(20px, 5vw, 55px);
+      p {
+        font-size: clamp(1rem, 5vw, 1.4rem);
 
-         h2 {
-            font-size: clamp(1.5rem, 7vw, 2rem);
-            text-align: center;
-         }
-
-         p {
-            font-size: clamp(1rem, 5vw, 1.4rem);
-
-            &:first-of-type {
-               margin-top: 15px;
-            }
-         }
-
-         ul {
-            max-width: 600px;
-            margin-left: 20px;
-            margin-top: 20px;
-
-            li {
-               margin-bottom: 5px;
-               font-size: clamp(1rem, 5vw, 1.4rem);
-            }
-         }
+        &:first-of-type {
+          margin-top: 15px;
+        }
       }
-   }
 
+      ul {
+        max-width: 600px;
+        margin-left: 20px;
+        margin-top: 20px;
+
+        li {
+          margin-bottom: 5px;
+          font-size: clamp(1rem, 5vw, 1.4rem);
+        }
+      }
+    }
+  }
 }
 
-@media (max-width: 600px) {}
+@media (max-width: 600px) {
+}

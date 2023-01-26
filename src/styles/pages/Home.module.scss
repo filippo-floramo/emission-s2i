@@ -1,7 +1,7 @@
-@import "../variables.scss";
+@import '../variables.scss';
 
 .home::before {
-  content: "";
+  content: '';
   display: block;
   height: $nav-height;
 }
@@ -14,7 +14,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 
   &_container {
     width: 100%;
@@ -44,11 +43,11 @@
         border-radius: 8px;
         background-color: red;
         color: white;
-        font-family: "source-sans-pro";
+        font-family: 'source-sans-pro';
         font-size: 1.2rem;
         font-weight: 600;
         text-decoration: none;
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         cursor: pointer;
 
         &:hover {
@@ -61,13 +60,11 @@
         color: red;
         background-color: rgb(240, 240, 240);
       }
-
     }
   }
 }
 
-@media(max-width: 999px) {
-
+@media (max-width: 999px) {
   .home {
     &_container {
       align-items: center;

@@ -23,7 +23,6 @@ export function useEmissionApi(): ApiTypes {
   const currentDate = new Date().toJSON();
 
   const getEmissionData = async () => {
-
     let totalDataUrl: string;
 
     if (isCountrySearch) {

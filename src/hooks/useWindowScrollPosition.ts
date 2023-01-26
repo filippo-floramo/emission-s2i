@@ -1,32 +1,29 @@
-import { useState, useEffect, useCallback, useRef } from "react";
-
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 interface ScrollTypes {
-   isScrollDown: boolean;
-   scrollY: number;
+  isScrollDown: boolean;
+  scrollY: number;
 }
 
 export function useWindowScrollPositions() {
+  const [scrollPosition, setPosition] = useState<ScrollTypes>({ isScrollDown: false, scrollY: 0 });
 
-   const [scrollPosition, setPosition] = useState<ScrollTypes>({ isScrollDown: false, scrollY: 0 });
+  const previousScrollY = useRef(0);
 
-   const previousScrollY = useRef(0);
+  const updatePosition = useCallback(() => {
+    const ScrollY: number = window.scrollY;
+    const isScrollDown: boolean = previousScrollY.current < ScrollY ? true : false;
 
-   const updatePosition = useCallback(() => {
+    previousScrollY.current = ScrollY;
 
-      const ScrollY: number = window.scrollY;
-      const isScrollDown: boolean = previousScrollY.current < ScrollY ? true : false;
+    setPosition({ isScrollDown, scrollY });
+  }, []);
 
-      previousScrollY.current = ScrollY;
+  useEffect(() => {
+    window.addEventListener('scroll', updatePosition);
 
-      setPosition({ isScrollDown, scrollY });
-   }, []);
+    return () => window.removeEventListener('scroll', updatePosition);
+  }, [updatePosition]);
 
-   useEffect(() => {
-      window.addEventListener('scroll', updatePosition);
-
-      return () => window.removeEventListener('scroll', updatePosition);
-   }, [updatePosition]);
-
-   return scrollPosition;
-};
+  return scrollPosition;
+}

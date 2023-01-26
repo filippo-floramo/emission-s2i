@@ -7,11 +7,10 @@ interface CountryListTypes {
 }
 
 export async function getCountries(): Promise<CountryListTypes[]> {
-
   try {
     const res = await axios.get<CountryCodes>('https://api.v2.emissions-api.org/api/v2/countries.json');
     const data = res.data;
-    
+
     const filteredCountryCodes: string[] = Object.keys(data || []).filter((key) => {
       return key.length <= 2;
     });
@@ -34,4 +33,3 @@ export async function getCountries(): Promise<CountryListTypes[]> {
     return [];
   }
 }
-
