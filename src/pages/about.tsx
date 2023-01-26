@@ -4,6 +4,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { UseIsDesktop } from "../lib/utils/mediaQueries";
+import FloatingSearchButton from "../components/FloatingSearchButton/FloatingSearchButton";
 import styles from '../styles/pages/About.module.scss';
 
 const AboutVariants = {
@@ -74,6 +75,7 @@ export default function About(): JSX.Element {
           </ul>
         </div>
       </motion.div>
+      <FloatingSearchButton />
     </div >
   );
 }

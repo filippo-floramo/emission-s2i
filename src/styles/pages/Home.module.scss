@@ -32,6 +32,8 @@
 
     .home_buttons {
       margin-top: 30px;
+      display: flex;
+      gap: 15px;
 
       .btn {
         display: flex;
@@ -39,21 +41,27 @@
         justify-content: center;
         width: 200px;
         height: 60px;
-        border: 5px solid red;
         border-radius: 8px;
-        color: red;
+        background-color: red;
+        color: white;
         font-family: "source-sans-pro";
         font-size: 1.2rem;
         font-weight: 600;
-
         text-decoration: none;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
         cursor: pointer;
 
         &:hover {
           transform: scale(1.1);
-          transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
         }
       }
+
+      .about {
+        border: 5px solid red;
+        color: red;
+        background-color: rgb(240, 240, 240);
+      }
+
     }
   }
 }
@@ -67,7 +75,10 @@
       .home_text {
         text-align: center;
       }
-    }
 
+      .home_buttons {
+        flex-direction: column;
+      }
+    }
   }
 }

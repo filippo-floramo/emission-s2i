@@ -1,12 +1,14 @@
 import Head from 'next/head';
 import Navbar from '../Navbar/Navbar';
+import { useRouter } from 'next/router';
+import FloatingSearchButton from '../FloatingSearchButton/FloatingSearchButton';
 import styles from "./Layout.module.scss";
-
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 function Layout({ children }: LayoutProps): JSX.Element {
+
   return (
     <>
       <Head>
@@ -15,7 +17,9 @@ function Layout({ children }: LayoutProps): JSX.Element {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Navbar />
-      <div className={styles.layout}>{children}</div>
+      <div className={styles.layout}>
+        {children}
+      </div>
     </>
   );
 }
