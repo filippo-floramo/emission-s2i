@@ -58,7 +58,7 @@ This Project had the following requirements:
 1. Clone repository
 
 ```sh
-git clone https://github.com/filippo-floramo/meditactive.git
+git clone https://github.com/filippo-floramo/emission-s2i.git
 ```
 
 2. Install dependencies
