@@ -41,11 +41,11 @@ This Project had the following requirements:
 
 - [Axios](https://github.com/axios/axios)
 
-##### Animation
+##### Animations:
 
 - [Framer Motion](https://github.com/framer/motion)
 
-##### Components
+##### Components:
 
 - [Material UI](https://mui.com/)
 
