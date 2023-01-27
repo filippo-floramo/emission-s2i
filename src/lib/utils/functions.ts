@@ -80,12 +80,12 @@ export const getRangeData = (data: EmissionData[] | null, range: TimeRangeOption
 };
 
 export const formatMainSearchData = (
-  mainEmissionData: EmissionData[] | null,
+  mainEmissionData: EmissionData[],
   emissionQueries: EmissionQuery,
 ): EmissionData[] => {
   const { startDate, endDate } = emissionQueries;
 
-  if (!startDate || !endDate || !mainEmissionData) return [];
+  if (!startDate || !endDate) return [];
 
   const startDateMs = new Date(startDate).getTime();
   const endDateMs = new Date(endDate).getTime();
