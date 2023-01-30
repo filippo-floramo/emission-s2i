@@ -13,6 +13,9 @@ interface ApiTypes {
 const DataLoading = atom<boolean>(false);
 
 export function useEmissionApi(): ApiTypes {
+
+
+
   const [isDataLoading, setIsDataLoading] = useAtom(DataLoading);
 
   const { isCountrySearch } = useStateAtoms();
@@ -24,6 +27,7 @@ export function useEmissionApi(): ApiTypes {
 
   const getEmissionData = async () => {
     let totalDataUrl: string;
+
 
     if (isCountrySearch) {
       totalDataUrl = `https://api.v2.emissions-api.org/api/v2/carbonmonoxide/average.json?country=${countryCode}&begin=2019-01-01&end=${currentDate}&offset=0`;

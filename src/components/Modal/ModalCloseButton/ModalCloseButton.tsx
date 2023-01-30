@@ -4,6 +4,8 @@ import useStateAtoms from '../../../atoms/atoms';
 import useEmissionAtoms from '../../../atoms/emissionAtoms';
 import styles from './ModalCloseButton.module.scss';
 
+
+
 export default function ModalCloseButton(): JSX.Element {
   const { setIsModalOpen } = useStateAtoms();
   const { setEmissionQueries } = useEmissionAtoms();
