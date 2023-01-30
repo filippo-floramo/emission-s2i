@@ -1,6 +1,6 @@
 import { atom, useAtom, SetStateAction } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
-import { EmissionData } from '../interfaces/interfaces';
+import { EmissionData } from '../interfaces';
 
 interface EmissionAtoms {
   emissionQueries: EmissionQuery;

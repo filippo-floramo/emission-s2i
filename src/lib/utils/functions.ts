@@ -1,5 +1,4 @@
-import { EmissionData, EmissionQuery } from '../../interfaces/interfaces';
-import { TimeRangeOptions } from '../../interfaces/interfaces';
+import { EmissionData, EmissionQuery, TimeRangeOptions } from '../../interfaces';
 
 interface DateRange {
   to: number;

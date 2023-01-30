@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmissionData } from '../../../interfaces/interfaces';
+import { EmissionData } from '../../../interfaces';
 import Tooltip from '../../Tooltip/Tooltip';
 import styles from './ChartCounter.module.scss';
 

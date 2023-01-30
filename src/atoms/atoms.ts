@@ -1,7 +1,7 @@
 import { atom, SetStateAction, useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { timeRangeOptions } from '../lib/utils/miscellaneous';
-import { TimeRangeOptions } from '../interfaces/interfaces';
+import { TimeRangeOptions } from '../interfaces';
 
 interface Atoms {
   isModalOpen: boolean;

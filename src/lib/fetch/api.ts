@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CountryCodes } from '../../interfaces/interfaces';
+import { CountryCodes } from '../../interfaces';
 
 interface CountryListTypes {
   label: string;

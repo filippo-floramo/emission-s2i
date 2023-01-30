@@ -1,5 +1,5 @@
 import { manageData, formatMainSearchData } from '../lib/utils/functions';
-import { EmissionData } from '../interfaces/interfaces';
+import { EmissionData } from '../interfaces';
 import { atom, useAtom } from 'jotai';
 import useStateAtoms from '../atoms/atoms';
 import useEmissionAtoms from '../atoms/emissionAtoms';
