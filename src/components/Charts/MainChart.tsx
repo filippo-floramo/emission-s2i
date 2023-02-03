@@ -9,7 +9,7 @@ export default function MainChart(): JSX.Element {
   const hasMounted = useHasMounted();
   const { mainEmissionData } = useEmissionAtoms();
 
-  if (!hasMounted) return <ChartContainer>Ooops, something went wrong</ChartContainer>;
+  if (!hasMounted) return <ChartContainer>Loading...</ChartContainer>;
 
   if (!mainEmissionData || mainEmissionData.length === 0) return <ChartContainer>Data Not found</ChartContainer>;
 

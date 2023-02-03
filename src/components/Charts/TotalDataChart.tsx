@@ -16,7 +16,7 @@ export default function TotalDataChart(): JSX.Element {
   const { totalEmissionData } = useEmissionAtoms();
   const selectableData = useMemo(() => getRangeData(totalEmissionData, timeRange), [timeRange, totalEmissionData]);
 
-  if (!hasMounted) return <ChartContainer>Ooops, something went wrong</ChartContainer>;
+  if (!hasMounted) return <ChartContainer>Loading...</ChartContainer>;
 
   if (!selectableData || selectableData.length === 0) return <ChartContainer>Data Not found</ChartContainer>;
 

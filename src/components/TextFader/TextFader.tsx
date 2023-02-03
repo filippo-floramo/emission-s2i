@@ -33,7 +33,7 @@ export default function TextFader({ sourceText }: TextFaderProps) {
   }, [sourceText.length]);
 
 
-  if (!hasMounted) return null;
+  if (!hasMounted) return <></>;
 
   return <span style={{ display: "inline-block" }} className={styles[fadeProp.fade]}>{sourceText[countryIndex]}</span>;
 }
